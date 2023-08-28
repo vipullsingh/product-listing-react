@@ -57,9 +57,23 @@ const deleteProduct = async (req, res) => {
   }
 };
 
+const getProductById = async (req, res) => {
+    try {
+      const productId = req.params.id;
+      const product = await Product.findById(productId);
+      if (!product) {
+        return res.status(404).json({ error: 'Product not found' });
+      }
+      res.json(product);
+    } catch (error) {
+      res.status(500).json({ error: 'Error fetching product' });
+    }
+  };
+
 module.exports = {
   createProduct,
   getProducts,
+  getProductById,
   updateProduct,
   deleteProduct,
 };

@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import NotFoundPage from './pages/NotFoundPage.js'; 
+import SingleProductPage from './pages/SingleProductPage';
 import './styles/App.css';
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<HomePage />} />
-          {/* Add more routes for other pages */}
+          <Route path="/product/:productId" element={<SingleProductPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </div>

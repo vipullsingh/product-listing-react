@@ -20,6 +20,7 @@ import '../styles/ProductList.css';
 
 // ProductList.js
 function ProductList({ products, onEdit, onDelete }) {
+    console.log(products)
     return (
         <div className="product-list">
         {products.map((product) => (
