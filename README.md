@@ -1,103 +1,113 @@
-# Product Management Application
 
-This is a Product Management Application built using the MERN stack (MongoDB, Express.js, React, and Node.js). It allows you to perform CRUD operations (Create, Read, Update, Delete) for managing products.
+# Product Listing React App
+
+Welcome to the Product Listing React App! This is a full-stack web application built using the MERN stack (MongoDB, Express.js, React, and Node.js). This application allows you to manage and display a list of products with CRUD (Create, Read, Update, Delete) functionality.
+
+## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Routes](#api-routes)
+- [Example Requests with Postman](#example-requests-with-postman)
+- [Folder Structure](#folder-structure)
+- [Technologies Used](#technologies-used)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Installation
 
-### Backend (API)
+1. **Clone the Repository:**
 
-1. Navigate to the `backend` folder:
+   ```bash
+   git clone https://github.com/vipullsingh/product-listing-react.git
    ```
+
+2. **Navigate to Client and Backend Folders:**
+
+   ```bash
+   cd product-listing-react/client
+   npm install
+
+   cd ../backend
+   npm install
+   ```
+
+   This will install the required dependencies for both the frontend and backend.
+
+## Usage
+
+1. **Start the Backend Server:**
+
+   ```bash
    cd backend
-   ```
-
-2. Install the required dependencies:
-   ```
-   npm install
-   ```
-
-3. Create a `.env` file in the `backend` directory and set the following environment variables:
-   ```
-   PORT=5000
-   MONGODB_URI=<your_mongodb_uri>
-   ```
-
-4. Start the backend server:
-   ```
    npm start
    ```
 
-   The API will run on `http://localhost:5000`.
+   The backend server will run on http://localhost:5000.
 
-### Frontend (React App)
+2. **Start the React App:**
 
-1. Navigate to the `client` folder:
-   ```
+   ```bash
    cd client
-   ```
-
-2. Install the required dependencies:
-   ```
-   npm install
-   ```
-
-3. Start the React app:
-   ```
    npm start
    ```
 
-   The React app will run on `http://localhost:3000`.
+   The React app will run on http://localhost:3000.
+
+3. **Access the App:**
+
+   Open your web browser and navigate to http://localhost:3000 to interact with the React app.
 
 ## API Routes
 
-- `GET /api/products`: Get a list of all products.
-- `GET /api/products/:id`: Get details of a specific product by ID.
-- `POST /api/products`: Create a new product.
-- `PUT /api/products/:id`: Update details of a specific product by ID.
-- `DELETE /api/products/:id`: Delete a product by ID.
+The following API routes are available:
 
-## JSON Examples
+- **GET /api/products**: Fetch all products.
+- **GET /api/products/:id**: Fetch a single product by its ID.
+- **POST /api/products**: Create a new product.
+- **PUT /api/products/:id**: Update a product by its ID.
+- **DELETE /api/products/:id**: Delete a product by its ID.
 
-### POST /api/products
+## Example Requests with Postman
 
-Request:
-```json
-{
-  "title": "Sample Product",
-  "description": "This is a sample product description.",
-  "price": 99.99,
-  "imageUrl": "https://example.com/sample.jpg"
-}
-```
+1. **Fetch All Products**:
+   - Method: GET
+   - URL: http://localhost:5000/api/products
 
-Response:
-```json
-{
-  "_id": "product_id",
-  "title": "Sample Product",
-  "description": "This is a sample product description.",
-  "price": 99.99,
-  "imageUrl": "https://example.com/sample.jpg"
-}
-```
+2. **Fetch a Single Product by ID**:
+   - Method: GET
+   - URL: http://localhost:5000/api/products/:id (Replace `:id` with an actual product ID)
 
-### GET /api/products/:id
+3. **Create a New Product**:
+   - Method: POST
+   - URL: http://localhost:5000/api/products
+   - Body: JSON data with `title`, `description`, `price`, and `imageUrl`.
 
-Response:
-```json
-{
-  "_id": "product_id",
-  "title": "Sample Product",
-  "description": "This is a sample product description.",
-  "price": 99.99,
-  "imageUrl": "https://example.com/sample.jpg"
-}
-```
+4. **Update a Product by ID**:
+   - Method: PUT
+   - URL: http://localhost:5000/api/products/:id (Replace `:id` with an actual product ID)
+   - Body: JSON data with updated `title`, `description`, `price`, and `imageUrl`.
 
-## Testing API Endpoints
+5. **Delete a Product by ID**:
+   - Method: DELETE
+   - URL: http://localhost:5000/api/products/:id (Replace `:id` with an actual product ID)
 
-You can use tools like [Postman](https://www.postman.com/) to test the API endpoints. Use the provided JSON examples above for testing the `POST` and `GET` requests.
+## Folder Structure
 
----
+The project is organized into two main folders:
 
-Make sure to replace `<your_mongodb_uri>` with the actual MongoDB URI you're using.
+- **client**: Contains the React frontend code.
+- **backend**: Contains the Node.js and Express.js backend code.
+
+## Technologies Used
+
+- Frontend: React
+- Backend: Node.js, Express.js
+- Database: MongoDB
+- HTTP Library: Axios
+- Routing: React Router
+- Styling: CSS
+
+## Contributing
+
+Contributions are welcome! If you find any issues or want to add new features, feel free to open a pull request.
