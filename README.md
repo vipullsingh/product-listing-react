@@ -31,6 +31,12 @@ Welcome to the Product Listing React App! This is a full-stack web application b
    cd ../backend
    npm install
    ```
+3. **Create a Dotenv file (.env) and Paste below code into it:**
+
+    ```
+    PORT = 5000
+    MONGODB_URL = <place_your_MongoDB_URL>
+    ```
 
    This will install the required dependencies for both the frontend and backend.
 
